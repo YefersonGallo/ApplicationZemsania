@@ -1,0 +1,5 @@
+2020-10-11T19:03:28.215-0500 INFO Starting Application on DESKTOP-327J4RB with PID 18632 (C:\Users\yefer\Documents\NetBeansProjects\applicationZemsania\target\classes started by yefer in C:\Users\yefer\Documents\NetBeansProjects\applicationZemsania)
+2020-10-11T19:03:28.218-0500 DEBUG Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-11T19:03:28.218-0500 INFO No active profile set, falling back to default profiles: default
+2020-10-11T19:03:32.568-0500 INFO Started Application in 4.761 seconds (JVM running for 6.59)
+2020-10-11T19:03:43.747-0500 INFO admin2 Datos incorrectos en el logueo
