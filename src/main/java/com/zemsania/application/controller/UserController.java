@@ -58,15 +58,21 @@ public class UserController {
     @PostMapping("user")
     public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
         User user = new User();
-        for (User aux: getUsers()) {
-            if(aux.getUser().equals(username) && aux.getPwd().equals(pwd)){
-                String token = getJWTToken(username);
-                user.setUser(username);
-                user.setToken(token);
-                logger.debug(username + " Logueo exitoso");
+        try {
+            for (User aux : getUsers()) {
+                if (aux.getUser().equals(username) && aux.getPwd().equals(pwd)) {
+                    String token = getJWTToken(username);
+                    user.setUser(username);
+                    user.setToken(token);
+                    logger.debug(username + " Logueo exitoso");
+                }
             }
+            if (user.getToken() == null) {
+                logger.info(username + " Datos incorrectos en el logueo");
+            }
+        }catch (Exception e){
+            logger.error(username + " error");
         }
-        if(user.getToken() == null){logger.info(username + " Datos incorrectos en el logueo");}
         return user;
     }
 
