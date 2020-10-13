@@ -4,7 +4,6 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 public class Producto implements Serializable {
@@ -19,12 +18,6 @@ public class Producto implements Serializable {
 
     @Column
     private Long precio;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name="DetalleVenta",
-            joinColumns=@JoinColumn(name="idProducto"),
-            inverseJoinColumns=@JoinColumn(name="idVenta"))
-    private List<Venta> ventas;
 
     public int getIdProducto() {
         return idProducto;
@@ -48,6 +41,14 @@ public class Producto implements Serializable {
 
     public void setPrecio(Long precio) {
         this.precio = precio;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Producto)) return false;
+        Producto producto = (Producto) o;
+        return ((getIdProducto() != 0) == (producto.getIdProducto() != 0));
     }
 
     @Override

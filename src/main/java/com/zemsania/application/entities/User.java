@@ -1,4 +1,4 @@
-package com.zemsania.application.controller;
+package com.zemsania.application.entities;
 
 public class User {
 

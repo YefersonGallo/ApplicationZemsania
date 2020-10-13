@@ -22,10 +22,11 @@ public class Cliente implements Serializable {
     private Long dni;
 
     @Column
-    private int telefono;
+    private Long telefono;
 
     @Column
     private String email;
+
 
     public int getIdCliente() {
         return idCliente;
@@ -59,11 +60,11 @@ public class Cliente implements Serializable {
         this.dni = dni;
     }
 
-    public int getTelefono() {
+    public Long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
 

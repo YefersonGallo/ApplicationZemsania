@@ -8,12 +8,12 @@ public interface ProductoService {
 
     public List<Producto> getAllProductos();
 
-    public Producto createProducto(Producto producto) throws Exception;
+    public Producto createProducto(Producto producto) ;
 
-    public Producto readProducto(int id) throws Exception;
+    public Producto readProducto(int id) ;
 
-    public Producto updateProducto(int id, Producto producto) throws Exception;
+    public Producto updateProducto(int id, Producto producto);
 
-    public void deleteProducto(int id) throws Exception;
+    public void deleteProducto(int id);
 
 }

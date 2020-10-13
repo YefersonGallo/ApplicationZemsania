@@ -19,19 +19,20 @@ public class ProductoServiceImpl implements ProductoService{
     }
 
     @Override
-    public Producto createProducto(Producto producto) throws Exception {
-        producto = repository.save(producto);
-        return producto;
+    public Producto createProducto(Producto producto){
+        Producto producto1 = null;
+        producto1 = repository.save(producto);
+        return producto1;
     }
 
     @Override
-    public Producto readProducto(int id) throws Exception {
+    public Producto readProducto(int id) {
         Producto producto = repository.findById(id).get();
         return producto;
     }
 
     @Override
-    public Producto updateProducto(int id, Producto producto) throws Exception {
+    public Producto updateProducto(int id, Producto producto) {
         Producto productoAux = repository.findById(id).get();
         productoAux.setNombre(producto.getNombre());
         productoAux.setPrecio(producto.getPrecio());
@@ -39,7 +40,7 @@ public class ProductoServiceImpl implements ProductoService{
     }
 
     @Override
-    public void deleteProducto(int id) throws Exception {
+    public void deleteProducto(int id) {
         Producto producto = repository.findById(id).get();
         repository.delete(producto);
     }

@@ -1,11 +1,10 @@
 package com.zemsania.application.services;
 
 import com.zemsania.application.entities.Venta;
+import com.zemsania.application.repositories.ClienteRepository;
 import com.zemsania.application.repositories.VentaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class VentaServiceImpl implements VentaService{
@@ -13,8 +12,11 @@ public class VentaServiceImpl implements VentaService{
     @Autowired
     VentaRepository repository;
 
+    @Autowired
+    ClienteRepository clienteRepository;
+
     @Override
-    public List<Venta> getAllVentas() {
+    public Iterable<Venta> getAllVentas() {
         return repository.findAll();
     }
 
@@ -29,4 +31,5 @@ public class VentaServiceImpl implements VentaService{
         Venta venta = repository.findById(id).get();
         return venta;
     }
+
 }

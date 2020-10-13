@@ -10,7 +10,37 @@
         </Console>
 
         <RollingFile name="appLog"
-                     fileName="${APP_LOG_ROOT}/application.log"
+                     fileName="${APP_LOG_ROOT}/login.log"
+                     filePattern="${APP_LOG_ROOT}/application-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="19500KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="1" />
+        </RollingFile>
+
+        <RollingFile name="restClienteLog"
+                     fileName="${APP_LOG_ROOT}/restCliente.log"
+                     filePattern="${APP_LOG_ROOT}/application-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="19500KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="1" />
+        </RollingFile>
+
+        <RollingFile name="restProductoLog"
+                     fileName="${APP_LOG_ROOT}/restProducto.log"
+                     filePattern="${APP_LOG_ROOT}/application-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="19500KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="1" />
+        </RollingFile>
+
+        <RollingFile name="restVentaLog"
+                     fileName="${APP_LOG_ROOT}/restVenta.log"
                      filePattern="${APP_LOG_ROOT}/application-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="${LOG_PATTERN}" />
             <Policies>
@@ -22,8 +52,23 @@
     </Appenders>
     <Loggers>
 
-        <Logger name="com.zemsania" additivity="false">
+        <Logger name="com.zemsania.application.controller.UserController" additivity="false">
             <AppenderRef ref="appLog" />
+            <AppenderRef ref="Console" />
+        </Logger>
+
+        <Logger name="com.zemsania.application.controller.ControllerRESTCliente" additivity="false">
+            <AppenderRef ref="restClienteLog" />
+            <AppenderRef ref="Console" />
+        </Logger>
+
+        <Logger name="com.zemsania.application.controller.ControllerRESTProducto" additivity="false">
+            <AppenderRef ref="restProductoLog" />
+            <AppenderRef ref="Console" />
+        </Logger>
+
+        <Logger name="com.zemsania.application.controller.ControllerRESTVenta" additivity="false">
+            <AppenderRef ref="restVentaLog" />
             <AppenderRef ref="Console" />
         </Logger>
 
