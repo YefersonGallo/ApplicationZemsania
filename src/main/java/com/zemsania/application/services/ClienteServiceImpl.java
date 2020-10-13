@@ -14,12 +14,12 @@ public class ClienteServiceImpl implements ClienteService {
     ClienteRepository repository;
 
     @Override
-    public List<Cliente> getAllClientes() {
+    public Iterable<Cliente> getAllClientes() {
         return repository.findAll();
     }
 
     @Override
-    public Cliente createCliente(Cliente cliente) throws Exception {
+    public Cliente createCliente(Cliente cliente) {
         cliente = repository.save(cliente);
         return cliente;
     }

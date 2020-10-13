@@ -21,13 +21,13 @@ public class VentaServiceImpl implements VentaService{
     }
 
     @Override
-    public Venta createVenta(Venta venta) throws Exception {
+    public Venta createVenta(Venta venta) {
         venta = repository.save(venta);
         return venta;
     }
 
     @Override
-    public Venta readVenta(int id) throws Exception {
+    public Venta readVenta(int id){
         Venta venta = repository.findById(id).get();
         return venta;
     }

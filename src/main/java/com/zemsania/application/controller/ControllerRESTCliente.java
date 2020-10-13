@@ -7,8 +7,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 public class ControllerRESTCliente {
 
@@ -18,7 +16,7 @@ public class ControllerRESTCliente {
     ClienteService clienteService;
 
     @GetMapping(value = "/clientes")
-    public List<Cliente> getClientes(){
+    public Iterable<Cliente> getClientes(){
         return clienteService.getAllClientes();
     }
 

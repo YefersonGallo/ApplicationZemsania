@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ProductoService {
 
-    public List<Producto> getAllProductos();
+    public Iterable<Producto> getAllProductos();
 
     public Producto createProducto(Producto producto) ;
 

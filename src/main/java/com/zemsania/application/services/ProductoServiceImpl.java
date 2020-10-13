@@ -5,8 +5,6 @@ import com.zemsania.application.repositories.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class ProductoServiceImpl implements ProductoService{
 
@@ -14,7 +12,7 @@ public class ProductoServiceImpl implements ProductoService{
     ProductoRepository repository;
 
     @Override
-    public List<Producto> getAllProductos() {
+    public Iterable<Producto> getAllProductos() {
         return repository.findAll();
     }
 

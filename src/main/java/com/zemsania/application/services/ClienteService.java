@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ClienteService {
 
-    public List<Cliente> getAllClientes();
+    public Iterable<Cliente> getAllClientes();
 
-    public Cliente createCliente(Cliente cliente) throws Exception;
+    public Cliente createCliente(Cliente cliente);
 }
